@@ -2,7 +2,7 @@
 
 module.exports = More;
 
-var Duplex = require('readable-stream').Duplex;
+var Duplex = require('readable-stream/duplex');
 var inherits = require('inherits');
 
 /**
