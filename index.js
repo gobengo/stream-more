@@ -21,10 +21,8 @@ function More(opts) {
     this._stack = [];
     this._requestMore = null;
     this._hasPrefinished = false;
-    // will be emitted if someone .ends() the writable
-    // side of the More
-    this.once('prefinish', function () {
-      this._hasPrefinished = true;
+    this.once('finish', function () {
+        this.push(null);
     });
 };
 
@@ -132,12 +130,5 @@ More.prototype._fetchAndPush = function () {
     if (this._stack.length === 0 &&
         typeof this._requestMore === 'function') {
         this._requestMore();
-    }
-
-    // there is no data to push, and no way of requesting more.
-    // If this has emitted 'prefinish', then the writable side
-    // has been ended, and we should push(null) to signal EOF on readable side
-    if (this._hasPrefinished) {
-        this.push(null);
     }
 };

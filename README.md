@@ -8,7 +8,7 @@ Real-world example: If you're looking at a feed of content in a Web Component, y
 
 Backpressure ftw.
 
-Note: This library is intended to work in both node and the browser.
+Note: This library is intended to work in both node and the browser. It also works with both streams2 and streams3.
 
 ## API
 

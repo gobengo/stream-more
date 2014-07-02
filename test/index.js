@@ -11,7 +11,7 @@ describe('stream-more', function () {
         more.on('hold', onMoreHold = sinon.spy());
         more.on('end', onMoreEnd = sinon.spy());
 
-        var output = new WritableArray();
+        var output = new WritableArray([], { objectMode: true });
         output.on('finish', function () {
             assert.equal(onMoreHold.callCount, 2);
             assert.equal(onMoreEnd.callCount, 1);
