@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "inherits": "^2.0.1",
+    "stream-browserify": "^1.0.0",
     "readable-stream": "^1.0.0"
   },
   "devDependencies": {
@@ -20,7 +21,6 @@
     "chai": "^1.9.1",
     "sinon": "^1.10.2",
     "stream-arrays": "^0.1.0",
-    "stream-browserify": "^1.0.0",
     "through2": "^0.5.1",
     "watchify": "^0.10.2"
   }
